@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Rectangle {
+
+    private int x;
+    private int y;
+    private int width;
+    private int height;
+
+    public Rectangle(int x, int y, int width, int height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input x cordinate: ");
+        int x = in.nextInt();
+        System.out.print("Input y cordinate: ");
+        int y = in.nextInt();
+        System.out.print("Input Width of Rectangle: ");
+        int width = in.nextInt();
+        System.out.print("Input Height of Rectangle: ");
+        int height = in.nextInt();
+
+        Rectangle rectangle = new Rectangle(x, y, width, height);
+        System.out.println();
+        System.out.println("Height: " + rectangle.getHeight());
+        System.out.println("Width: " + rectangle.getWidth());
+        System.out.println("x: " + rectangle.getX());
+        System.out.println("y: " + rectangle.getY());
+    }
+}

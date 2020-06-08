@@ -1,0 +1,97 @@
+class Student {
+   private String major;
+   private double gpa;
+   private int creditHours;
+   public double getGpa(){
+       return gpa;
+   }
+   public Student(String m, double g, int c){
+      major = m;
+      gpa = g;
+      creditHours = c;
+   }
+   public String getMajor(){
+       return major;
+   }
+   public int getCreditHours(){
+       return creditHours;
+   }
+   public String getYear(){
+       String res = "";
+       if (creditHours < 32){
+          res = "Freshman";
+       }
+       if (creditHours >= 32 && creditHours < 64){
+          res = "Sophomore";
+       }
+       if (creditHours >= 64 && creditHours < 96){
+          res = "Junior";
+       }
+       if (creditHours >= 96){
+          res = "Senior";
+       }
+       return res;
+   }
+
+}
+
+class Graduate extends Student{
+     private String degree;
+     private String concentration;
+     private int years;
+     public Graduate(String m, double g, String d, String con, int y){
+        super(m,g,0);
+        degree = d;
+        concentration = con;
+        years = y;
+     }
+     public String getDegree(){
+         return degree;
+     }
+     public int getYears(){
+          return years;
+     }
+     public String getConcentartion(){
+          return concentration;
+     }
+    
+}
+
+class UnderGraduate extends Student{
+    private boolean honors;
+    public boolean isHonors(){
+        return honors;
+    }
+    public UnderGraduate(String m, double g, int c, boolean b){
+        super(m,g,c);
+        honors = b;
+     }
+
+}
+
+
+------------------------------
+public class Demo{
+
+    public static void main(String[] args){
+        
+         UnderGraduate John = new UnderGraduate("CS",3.75,40,false);
+         Graduate Zooey = new Graduate("Computer Science",4.0,"Masters","Bioinformatics",1);
+         System.out.println("John: ");
+         System.out.println("Major: " + John.getMajor());   
+         System.out.println("GPA: " + John.getGpa());  
+         System.out.println("Year: " + John.getYear());
+         if (John.isHonors())
+            System.out.println("John is honors student");
+         else
+            System.out.println("John is not honors student");
+
+         System.out.println("\nZooey:");
+        
+         System.out.println("Major: " + Zooey.getMajor());   
+         System.out.println("GPA: " + Zooey.getGpa());
+         System.out.println("Concentration: " + Zooey.getConcentration());
+         System.out.println("Years spent in graduation: " + Zooey.getYears());
+        
+    }
+}

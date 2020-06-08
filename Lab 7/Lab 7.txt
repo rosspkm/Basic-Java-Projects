@@ -1,0 +1,66 @@
+import java.util.Collection;
+
+import java.util.Collections;
+
+import java.util.HashMap;
+
+import java.util.Map;
+
+import java.util.Set;
+
+public class PresidentsMain {
+
+      public static void filterMapByValue(Map<String,String> inMap, String targetValue){
+            for (Map.Entry<String,String> entry : inMap.entrySet()){
+                  if(targetValue.equals(entry.getValue())){
+                        System.out.println(entry.getKey()+" - "+entry.getValue());
+                  }
+            }
+      }
+      public static void printValues(Map<String,String> map){
+            for(String value : map.values()){
+                  System.out.println(value);
+            }
+      }
+      public static void printKeys(Map<String,String> map){
+            for(String key : map.keySet()){
+                  System.out.println(key);
+            }
+      }
+      public static void main(String[] args) {
+
+            Map<String, String> PresidentsOfTheUnitedStates = new HashMap<String, String>();
+
+            PresidentsOfTheUnitedStates.put("George Washington", "Unaffiliated");
+
+            PresidentsOfTheUnitedStates.put("John Adams", "Federalist");
+
+            PresidentsOfTheUnitedStates.put("Thomas Jefferson", "Democratic-Republican");
+
+            PresidentsOfTheUnitedStates.put("James Madison", "Democratic-Republican");
+
+            PresidentsOfTheUnitedStates.put("James Monroe", "Democratic-Republican");
+
+            PresidentsOfTheUnitedStates.put("John Quincy Adams", "Democratic-Republican");
+
+            PresidentsOfTheUnitedStates.put("Andrew Jackson", "Democratic");
+
+            PresidentsOfTheUnitedStates.put("Martin Van Buren", "Democratic");
+
+            PresidentsOfTheUnitedStates.put("William Henry Harrison", "Whig");
+
+            PresidentsOfTheUnitedStates.put("John Tyler", "Whig");
+
+            System.out.println("Presidents of Democratic-Republican party: ");
+            filterMapByValue(PresidentsOfTheUnitedStates,"Democratic-Republican");
+            System.out.println();
+            System.out.println("Keys: ");
+            printKeys(PresidentsOfTheUnitedStates);
+            System.out.println();
+            System.out.println("Values: ");
+            printValues(PresidentsOfTheUnitedStates);
+
+
+      }
+
+}
